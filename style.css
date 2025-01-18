@@ -43,18 +43,12 @@ header {
 
 main {
     background-color: var(--background-color);
-    display: flex;
-    align-items:flex-start;                            ;
+    display: flex;                          ;
     width: 100%;
     height: 100%;
 }
 
-.principal {   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+
 
 
 /* Produtos Disponíveis ----------------------------------- */
@@ -67,17 +61,42 @@ main {
     border-radius: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);;
     min-width: 300px;
+    background-color: var(--background-color);
+    
+    margin: auto;
+    
+}
+
+.titulos {
+    margin: 10px;
+    
+    margin-top: 10px;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #242222;
+    
+}
+
+.container-card {
+    width: 100%;
+    background-color: #2ecc71;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta automaticamente o número de colunas */
+    gap: 15px;
+    padding: 15px;
+   
+    
 }
 
 .card {
-    display: flex;
-    align-items: center;
+    display:flex;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
-    margin: 10px 0;
-    background-color: #fff;
+    background-color: var(--background-color);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    height: 100%;
 }
 
 .card img {
@@ -91,7 +110,9 @@ main {
 .card-container--info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
 }
 
 .card-container--value {
@@ -132,6 +153,8 @@ input {
 
 .buttons {
     margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 button {
@@ -165,6 +188,8 @@ footer {
     color: white;
     font-size: 0.8em;
     width: 100%;
+    gap: 5px;
+    font-size: 0.6em;
 }
 
 

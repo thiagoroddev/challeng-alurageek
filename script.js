@@ -4,7 +4,7 @@ const productPriceInput = document.getElementById('product-price');
 const productImageInput = document.getElementById('product-image');
 const addProductButton = document.getElementById('add-product');
 const clearFieldsButton = document.getElementById('clear-fields');
-const meusProdutosSection = document.querySelector('.meus-produtos');
+const meusProdutosSection = document.querySelector('.container-card');
 
 // Função para criar um card de produto
 function createProductCard(name, price, imageUrl) {
@@ -41,6 +41,7 @@ function createProductCard(name, price, imageUrl) {
     cardInfo.appendChild(cardValue);
     card.appendChild(img);
     card.appendChild(cardInfo);
+
 
     // Adicionar o card à seção
     meusProdutosSection.appendChild(card);
