@@ -25,7 +25,7 @@ body {
      
     height: 100%;
     width: 100%;
-    background-color: yellowgreen;
+    
 }
 
 header {
@@ -79,13 +79,10 @@ main {
 
 .container-card {
     width: 100%;
-    background-color: #2ecc71;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta automaticamente o número de colunas */
     gap: 15px;
     padding: 15px;
-   
-    
 }
 
 .card {
@@ -131,10 +128,8 @@ main {
 /* Adicionar Produtos ----------------------------------- */
 
 .adicionar-produtos {
-    
     padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     height: 300px;
     margin: 5px;
     min-width: 300px;
@@ -192,4 +187,13 @@ footer {
     font-size: 0.6em;
 }
 
+/* Responsividade */
+@media (max-width: 468px) {
 
+    main {
+        flex-direction: column;
+    }
+
+   
+
+}
