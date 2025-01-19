@@ -1,3 +1,7 @@
+import { fetchProdutos, addProduto, deleteProduto } from './js/fake-api.js';
+
+
+
 // Seleção de elementos
 const productNameInput = document.getElementById('product-name');
 const productPriceInput = document.getElementById('product-price');
@@ -7,7 +11,7 @@ const clearFieldsButton = document.getElementById('clear-fields');
 const meusProdutosSection = document.querySelector('.container-card');
 
 // Função para criar um card de produto
-function createProductCard(name, price, imageUrl) {
+function createProductCard(name, price, imageUrl, id) {
     // Criar elementos do card
     const card = document.createElement('div');
     card.className = 'card';
@@ -32,7 +36,14 @@ function createProductCard(name, price, imageUrl) {
     deleteIcon.className = 'material-symbols-outlined';
     deleteIcon.textContent = 'delete'; // Ícone do Google
     deleteIcon.style.cursor = 'pointer';
-    deleteIcon.addEventListener('click', () => card.remove());
+    deleteIcon.addEventListener('click', async () => {
+        try {
+          await deleteProduto(id); // Remove o produto pelo ID
+          card.remove();
+        } catch (error) {
+          console.error("Erro ao remover produto:", error);
+        }
+      });
 
     // Montar o card
     cardValue.appendChild(productPrice);
@@ -48,24 +59,43 @@ function createProductCard(name, price, imageUrl) {
 }
 
 // Evento para adicionar produto
-addProductButton.addEventListener('click', () => {
+addProductButton.addEventListener('click', async () => {
     const name = productNameInput.value.trim();
     const price = productPriceInput.value.trim();
     const imageUrl = productImageInput.value.trim();
-
+  
     if (name && price && imageUrl) {
-        createProductCard(name, price, imageUrl);
+      const novoProduto = { nome: name, preco: price, image: imageUrl };
+  
+      try {
+        const produtoAdicionado = await addProduto(novoProduto);
+        createProductCard(produtoAdicionado.nome, produtoAdicionado.preco, produtoAdicionado.image);
         productNameInput.value = '';
         productPriceInput.value = '';
         productImageInput.value = '';
+      } catch (error) {
+        console.error("Erro ao adicionar produto:", error);
+      }
     } else {
-        alert('Por favor, preencha todos os campos.');
+      alert('Por favor, preencha todos os campos.');
     }
-});
+  });
 
 // Evento para limpar campos
 clearFieldsButton.addEventListener('click', () => {
     productNameInput.value = '';
     productPriceInput.value = '';
     productImageInput.value = '';
+});
+
+// exibir produtos
+window.addEventListener('DOMContentLoaded', async () => {
+  try {
+    const produtos = await fetchProdutos();
+    produtos.forEach(produto => {
+      createProductCard(produto.nome, produto.preco, produto.image, produto.id);
+    });
+  } catch (error) {
+    console.error("Erro ao carregar produtos:", error);
+  }
 });
