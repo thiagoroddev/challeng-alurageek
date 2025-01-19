@@ -1,11 +1,11 @@
 # Meu Projeto
 
-Este é o meu projeto incrível.
+Este é o meu projeto do desafio AluraGeek
 
-## Logo
+## Print do projeto
 
 ![Logo do Projeto](https://github.com/thiagoroddev/challeng-alurageek/blob/main/images/projeto.png?raw=true)
 
 ## Descrição
 
-Aqui está um print do projeto.
+Loja de chaveiros personalizados
