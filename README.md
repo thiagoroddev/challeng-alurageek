@@ -15,9 +15,26 @@ CSS: Estilização responsiva e atraente para os elementos da interface.
 JavaScript: Lógica para interação com o usuário, criação de cards e comunicação com o servidor.
 json-server: Simulação de uma API RESTful para o gerenciamento de dados de produtos.
 
-## Print do projeto
+Como Usar
 
-![Logo do Projeto](https://github.com/thiagoroddev/challeng-alurageek/blob/main/images/projeto.png?raw=true)
+Clone o repositório:
+git clone https://github.com/thiagoroddev/challeng-alurageek.git
+
+Instale as dependências do json-server:
+npm install -g json-server
+
+Inicie o servidor falso:
+json-server --watch db.json
+
+Abra o arquivo index.html em seu navegador para visualizar a aplicação.
+
+
+## Prints do projeto
+
+![Desktop](https://github.com/thiagoroddev/challeng-alurageek/blob/main/images/projeto.png?raw=true)
+![Tablet](https://github.com/thiagoroddev/challeng-alurageek/blob/main/images/tablet.png?raw=true)
+![Smatphone](https://github.com/thiagoroddev/challeng-alurageek/blob/main/images/celular.png?raw=true)
+
 
 ## Projeto de Cadastro e Visualização de Produtos
 
