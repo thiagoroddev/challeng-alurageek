@@ -22,13 +22,13 @@ html {
 body {
     display: flex;
     flex-direction: column;
-     
     height: 100%;
     width: 100%;
     
 }
 
 header {
+    order: 1;
     display: flex;
     align-items:center;
     justify-content: center;
@@ -46,6 +46,7 @@ main {
     display: flex;                          ;
     width: 100%;
     height: 100%;
+    order: 2;
 }
 
 
@@ -53,10 +54,11 @@ main {
 
 /* Produtos Disponíveis ----------------------------------- */
 .meus-produtos {
+    order: 2;
     flex-grow: 1;
     margin: 5px;
-    width: 60%;
-    height: 98%;
+    width: auto;
+    height: auto;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);;
@@ -79,6 +81,7 @@ main {
 
 .container-card {
     width: 100%;
+    height: auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajusta automaticamente o número de colunas */
     gap: 15px;
@@ -132,8 +135,10 @@ main {
     border-radius: 10px;
     height: 300px;
     margin: 5px;
-    min-width: 300px;
+    min-width: 400px;
     box-shadow: 0 0px 10px rgba(0, 0, 0, 0.2);
+    order: 1;
+    
 }
  
 input {
@@ -185,13 +190,19 @@ footer {
     width: 100%;
     gap: 5px;
     font-size: 0.6em;
+    order: 3;
 }
 
 /* Responsividade */
-@media (max-width: 468px) {
-
+@media (max-width:900px) {
     main {
         flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    
+    .meus-produtos {
+        width: 400px;
     }
 
    
